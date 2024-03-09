@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOT OPENDOOR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://png.pngtree.com/background/20230428/original/pngtree-the-front-door-of-a-blue-house-picture-image_2498769.jpg') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Add an overlay for better readability */
+    }
+
+    h1 {
+      margin: 0;
+      color: #333;
+    }
+
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Set height to 100vh to fill the entire viewport */
+    }
+
+    .auth-container {
+      background-color: rgba(255, 255, 255, 0.7); /* Adjust alpha value for translucency */
+      padding: 50px; /* Adjust padding for a more balanced look */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 20px; /* Adjust the gap between buttons */
+      justify-content: center; /* Center the buttons horizontally */
+    }
+
+    .header-button {
+      flex: 1; /* Make the buttons equally wide */
+      padding: 15px; /* Adjust padding for a larger button */
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .header-button:hover {
+      background-color: #0069d9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IOT OPENDOOR</h1>
+    <div class="header-buttons"></div>
+  </header>
+
+  <!-- Center container for login and signup -->
+  <div class="center-container">
+    <div class="auth-container">
+      <a href="{% url 'opendoor:login' %}" class="header-button">Login</a>
+      <a href="{% url 'opendoor:signup' %}" class="header-button">Signup</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trang Chủ</title>
+  <style>
+    /* CSS cho trang chủ */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://e0.pxfuel.com/wallpapers/500/326/desktop-wallpaper-japanese-anime-town-landscape.jpg') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50; /* Màu nền */
+      color: white; /* Màu chữ */
+      border: none; /* Không viền */
+      padding: 10px 20px; /* Khoảng cách giữa nút và nội dung */
+      font-size: 16px; /* Cỡ chữ */
+      cursor: pointer; /* Con trỏ khi di chuột */
+      border-radius:10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049; /* Màu nền khi di chuột vào */
+    }
+
+    #notification-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 999;
+      display: none;
+    }
+
+    #notification-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #notification-image {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
+    #close-btn {
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: auto;
+    }
+    #notification-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3498db; /* Màu xanh dương */
+    border-radius: 10px; /* Góc bo tròn */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 999;
+    display: none;
+    color: #ffffff; /* Màu chữ trắng */
+}
+
+#notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#notification-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 8px; /* Góc bo tròn cho hình ảnh */
+}
+
+#close-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #3498db; /* Màu xanh dương */
+    color: #ffffff; /* Màu chữ trắng */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px; /* Góc bo tròn cho nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+#close-btn:hover {
+    background-color: #2980b9; /* Màu xanh dương đậm khi hover */
+}
+#notification-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #66FFCC; /* Màu xanh dương */
+    border-radius: 10px; /* Góc bo tròn */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 999;
+    display: none;
+    color: #ffffff; /* Màu chữ trắng */
+}
+
+#notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#notification-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 8px; /* Góc bo tròn cho hình ảnh */
+}
+
+#close-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #0062cc; /* Màu xanh dương */
+    color: #ffffff; /* Màu chữ trắng */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px; /* Góc bo tròn cho nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+#close-btn:hover {
+   opacity:0.8
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SMARTDOOR</h1>
+  </header>
+
+  <section>
+    <h2 style="color:black">Trạng thái của nhà bạn: {{ status }}</h2>
+    <h2 style="color:black">Bạn có thể</h2>
+    <form method="POST" action="{% url 'opendoor:processbutton' %}">
+      {% csrf_token %}
+    <input type="hidden" name="housekey" value={{ housekey }}>
+          <input type="hidden" name="status" value=1>
+          <input type="submit" value="Bật">
+    </form>
+    <form method="POST" action="{% url 'opendoor:processbutton' %}">
+      {% csrf_token %}
+      <input type="hidden" name="housekey" value={{ housekey }}>
+      <input type="hidden" name="status" value=0>
+      <input type="submit" value="Tắt">
+    </form>
+
+    <div id="notification-container">
+      <div id="notification-content">
+        <p id="notification-message" style="color:red;font-weight:bold"></p>
+        <img id="notification-image" alt="Processed Image">
+        <button id="close-btn" onclick="closeNotification()">Đóng</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="margin-top: 20px;">
+      <p>Phông - Bằng - Nam</p>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    const groupid = "{{ housekey }}";
+    const socket = new WebSocket(
+      'ws://' + window.location.host + '/ws/socket-server/' + groupid + '/'
+    );
+    const notificationContainer = document.getElementById('notification-container');
+    const notificationMessage = document.getElementById('notification-message');
+    const notificationImage = document.getElementById('notification-image');
+
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log('Data:', data);
+      displayNotification(data.message, data.img);
+    };
+
+    function displayNotification(message, imageBase64) {
+      notificationMessage.textContent = message;
+      notificationImage.src = 'data:image/png;base64,' + imageBase64;
+      notificationContainer.style.display = 'flex';
+    }
+
+    function closeNotification() {
+      notificationContainer.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

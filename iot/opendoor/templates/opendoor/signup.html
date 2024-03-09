@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Đăng ký</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://e0.pxfuel.com/wallpapers/500/326/desktop-wallpaper-japanese-anime-town-landscape.jpg') center/cover no-repeat fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9); /* Adjust alpha value for translucency */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* Ensure padding does not increase width */
+    }
+
+    .form-group input[type="file"] {
+      padding: 0;
+    }
+
+    .form-group input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .form-group input[type="submit"]:hover,
+    .form-group .get-housekey:hover {
+      background-color: #0062cc;
+    }
+
+    .form-group .get-housekey {
+      background-color: #007bff;
+      transition: background-color 0.3s ease; /* Smooth transition effect */
+    }
+
+    .form-group .get-housekey:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Đăng ký tài khoản</h2>
+    <form action="{% url 'opendoor:housekey' %}" method="GET" class="form-group">
+      <input type="submit" class="get-housekey" value="Lấy HouseKey">
+    </form>
+    <form action="{% url 'opendoor:signup' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="image">Ảnh đại diện:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="housekey">HomeKey:</label>
+        <input type="text" id="housekey" name="housekey" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Đăng ký">
+</div>
+    </form>
+  </div>
+</body>
+</html>
